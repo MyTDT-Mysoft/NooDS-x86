@@ -10,7 +10,7 @@ PKGNAME := com.hydra.noods
 DESTDIR ?= /usr
 
 ifeq ($(OS),Windows_NT)
-  ARGS += -static -DWINDOWS
+  ARGS += -static -DWINDOWS -march=westmere
   LIBS += $(shell wx-config-static --libs --gl-libs) -lole32 -lsetupapi -lwinmm
   INCLUDES += $(shell wx-config-static --cxxflags)
 else
