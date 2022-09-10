@@ -1,6 +1,6 @@
 name: Automatic Builds
 
-on: [workflow_dispatch, push, pull_request]
+on: [workflow_dispatch]
 
 jobs:
   build-linux:
@@ -30,7 +30,7 @@ jobs:
     strategy:
       matrix:
         platform:
-        - { arch: x86_64, msystem: mingw64 }
+        - { arch: i686,   msystem: mingw32 }
 
     steps:
     - name: Checkout
